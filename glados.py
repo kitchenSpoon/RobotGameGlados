@@ -18,5 +18,5 @@ class Robot:
         	return ['move', rg.toward(self.location, rg.CENTER_POINT)]		
 	else:
 		# move towards closest ally
-		
-		return ['move', rg.toward(self.location, )]
+		loc=r.choice(rg.locs_around(self.location, filter_out=('invalid', 'obstacle','spawn')))
+		return ['move', rg.toward(self.location,loc)]
